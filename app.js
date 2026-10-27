@@ -130,10 +130,9 @@
         const letter = document.createElement("span");
         letter.className = "letter";
         div.appendChild(letter);
-        div.addEventListener("pointerdown", (e) => {
-          e.preventDefault();
-          tapCell(i);
-        });
+        // click (no pointerdown): en iOS el foco dado antes de soltar el dedo
+        // se pierde al terminar el toque y el teclado se cierra
+        div.addEventListener("click", () => tapCell(i));
       }
       gridEl.appendChild(div);
       cells.push(div);
