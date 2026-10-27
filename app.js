@@ -18,9 +18,9 @@
     : dates.filter((d) => d <= today).pop() || dates[0];
 
   const fecha = new Date(dateKey + "T12:00:00");
-  $("fecha").textContent = fecha.toLocaleDateString("es-CL", {
-    weekday: "long", day: "numeric", month: "long",
-  });
+  const fmt = (o) => fecha.toLocaleDateString("es-CL", o);
+  $("fecha").textContent =
+    `de hoy, ${fmt({ weekday: "long" })} ${fmt({ day: "numeric", month: "long" })}`;
 
   // ---------- tema claro/oscuro ----------
   const themeBtn = $("theme-btn");
@@ -101,8 +101,9 @@
     setActive(first.cells.find((i) => !entries[i]) ?? first.cells[0], "A", false);
     refresh();
 
-    document.querySelectorAll("#levels button").forEach((b) => {
+    document.querySelectorAll("#levels button").forEach((b, i) => {
       b.setAttribute("aria-selected", b.dataset.level === lv ? "true" : "false");
+      if (b.dataset.level === lv) $("levels").style.setProperty("--i", i);
     });
     $("temas").textContent = "Temas de hoy: " + puzzle.temas.join(" · ");
   }

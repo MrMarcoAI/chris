@@ -4,28 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#f4f1f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
-<title>Pupi's Cruci</title>
+<title>CHRIS</title>
+<meta name="apple-mobile-web-app-title" content="CHRIS">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>Pupi's Cruci</h1>
-  <div id="fecha"></div>
-  <button id="theme-btn" aria-label="Cambiar tema">◐</button>
+  <h1 class="titulo">
+    <span class="logo" role="img" aria-label="CHRIS"></span>
+    <span id="fecha"></span>
+  </h1>
+  <button id="theme-btn" class="glass" aria-label="Cambiar tema">◐</button>
 </header>
 
-<nav id="levels" role="tablist">
-  <button data-level="facil" role="tab">Fácil</button>
-  <button data-level="medio" role="tab">Medio</button>
-  <button data-level="dificil" role="tab">Difícil</button>
-</nav>
-
-<div id="clue-bar">
+<div id="clue-bar" class="glass">
   <button id="prev-word" aria-label="Palabra anterior">‹</button>
   <div id="clue-text"></div>
   <button id="next-word" aria-label="Palabra siguiente">›</button>
@@ -48,6 +47,13 @@
 </section>
 
 <footer id="temas"></footer>
+
+<nav id="levels" class="glass" role="tablist">
+  <span class="pill" aria-hidden="true"></span>
+  <button data-level="facil" role="tab">PAPA</button>
+  <button data-level="medio" role="tab">TRANQUI</button>
+  <button data-level="dificil" role="tab">PELÚO</button>
+</nav>
 
 <script src="puzzles.js"></script>
 <script src="app.js"></script>

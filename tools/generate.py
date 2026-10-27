@@ -16,9 +16,9 @@ from words import WORDS
 
 LEVELS = [
     # (nombre, tamaño, palabras objetivo, nivel máximo de palabra, sesgo difícil)
-    ("facil",   7,  9,  1, 0.0),
-    ("medio",   9,  12, 2, 0.15),
-    ("dificil", 11, 15, 3, 0.3),
+    ("facil",   9,  14, 1, 0.0),
+    ("medio",   11, 18, 2, 0.15),
+    ("dificil", 13, 23, 3, 0.3),
 ]
 
 ACROSS, DOWN = 0, 1
@@ -168,7 +168,7 @@ def build_level(date_str, name, size, target, max_lvl, hard_bias):
     pool.sort(key=lambda e: rng.random() - hard_bias * e[2])
 
     best = None
-    for _ in range(60):
+    for _ in range(200):
         grid, placed = try_build(pool, size, target, rng)
         if best is None or len(placed) > len(best[1]):
             best = (grid, placed)
